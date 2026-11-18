@@ -1,6 +1,6 @@
 // Stage the built site into git and commit it.
 //   node scripts/deploy.mjs                 # copy build to root + commit (no network)
-//   node scripts/deploy.mjs --push          # commit + push to W1W-SDJ/waw
+//   node scripts/deploy.mjs --push          # commit + push to <owner>/<repo>
 //   node scripts/deploy.mjs --push --enable-pages   # also switch Pages on via the API
 //
 // Sandbox note: in a restricted environment only *inherited* stdio can be spawned, so
@@ -162,7 +162,12 @@ if (!existsSync(join(root, '.git'))) {
 }
 
 gitTry(['config', 'user.name', config.owner], { quiet: true });
-gitTry(['config', 'user.email', `${config.owner}@users.noreply.github.com`], { quiet: true });
+// GitHub only keeps attribution for the ID-qualified no-reply form after a username
+// change; the bare `username@users.noreply.github.com` form stops linking on rename.
+gitTry(
+  ['config', 'user.email', config.ownerId ? `${config.ownerId}+${config.owner}@users.noreply.github.com` : `${config.owner}@users.noreply.github.com`],
+  { quiet: true },
+);
 gitTry(['config', 'core.quotepath', 'false'], { quiet: true });
 gitTry(['config', 'commit.gpgsign', 'false'], { quiet: true });
 // Windows git defaults to schannel, whose credential handle is unavailable in restricted

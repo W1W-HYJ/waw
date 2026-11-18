@@ -1,5 +1,7 @@
 // What is the deployed site actually serving right now?
-const base = 'https://w1w-sdj.github.io/waw/';
+import { readFileSync } from 'node:fs';
+
+const base = JSON.parse(readFileSync(new URL('../src/site.config.json', import.meta.url), 'utf8')).siteUrl;
 
 const bust = (url) => fetch(`${url}${url.includes('?') ? '&' : '?'}cb=${Date.now()}`).then((r) => r.text());
 

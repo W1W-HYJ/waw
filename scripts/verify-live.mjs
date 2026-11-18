@@ -1,5 +1,9 @@
 // Verify the live GitHub Pages deployment end to end.
-const base = 'https://w1w-sdj.github.io/waw/';
+// The base URL comes from the site config, so a username or repo rename never leaves a
+// stale host hardcoded here.
+import { readFileSync } from 'node:fs';
+
+const base = JSON.parse(readFileSync(new URL('../src/site.config.json', import.meta.url), 'utf8')).siteUrl;
 const urls = [
   base,
   `${base}projects/`,
