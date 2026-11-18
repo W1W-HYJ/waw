@@ -26,7 +26,9 @@ for (const url of urls) {
     if (rel === '/') {
       const title = text.match(/<title>([^<]*)<\/title>/)?.[1];
       const css = text.match(/href="(assets\/[^"]+\.css)"/)?.[1];
-      const js = text.match(/src="(main\.js)"/)?.[1];
+      // The build stamps a ?v=<buildId> query onto the entry, so match the path and
+      // keep the query for the follow-up fetch.
+      const js = text.match(/src="(main\.js[^"]*)"/)?.[1];
       console.log(`     title        : ${title}`);
       console.log(`     stylesheet   : ${css}`);
       console.log(`     module entry : ${js}`);
