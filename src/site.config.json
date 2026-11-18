@@ -1,10 +1,11 @@
 {
   "name": "HYJ",
-  "owner": "W1W-SDJ",
+  "owner": "W1W-HYJ",
+  "ownerId": 330400514,
   "repo": "waw",
-  "url": "https://github.com/W1W-SDJ/waw",
+  "url": "https://github.com/W1W-HYJ/waw",
   "base": "/waw/",
-  "siteUrl": "https://w1w-sdj.github.io/waw/",
+  "siteUrl": "https://w1w-hyj.github.io/waw/",
   "locale": "zh-CN",
   "title": "HYJ — 个人作品集",
   "titleEn": "HYJ / Portfolio",
@@ -15,6 +16,6 @@
   "avatar": null,
   "email": "",
   "social": {
-    "github": "https://github.com/W1W-SDJ"
+    "github": "https://github.com/W1W-HYJ"
   }
 }

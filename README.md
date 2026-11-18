@@ -2,7 +2,7 @@
 
 零依赖的静态作品集站点：手写 CSS 设计系统 + 原生 ES 模块，构建与预览都只用 Node，**不需要打包器、不需要任何原生产物**。
 
-**线上地址 → <https://w1w-sdj.github.io/waw/>**
+**线上地址 → <https://w1w-hyj.github.io/waw/>**
 
 ## 站点结构
 

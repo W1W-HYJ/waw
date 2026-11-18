@@ -1,9 +1,9 @@
-import { boot } from './lib/shell.js?v=3d3cad43';
+import { boot } from './lib/shell.js?v=8dcc0dad';
 
 const PAGES = {
-  home: () => import('./pages/home.js?v=3d3cad43'),
-  projects: () => import('./pages/projects.js?v=3d3cad43'),
-  about: () => import('./pages/about.js?v=3d3cad43'),
+  home: () => import('./pages/home.js?v=8dcc0dad'),
+  projects: () => import('./pages/projects.js?v=8dcc0dad'),
+  about: () => import('./pages/about.js?v=8dcc0dad'),
 };
 
 const page = document.body.dataset.page ?? 'home';
@@ -24,7 +24,7 @@ boot(async (outlet) => {
       <section class="section">
         <div class="empty">
           页面渲染出错：${String(err?.message ?? err)}<br>
-          刷新试试，或直接去 <a href="https://github.com/W1W-SDJ">GitHub</a>。
+          刷新试试，或直接去 <a href="https://github.com/W1W-HYJ">GitHub</a>。
         </div>
       </section>`;
   }
